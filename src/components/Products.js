@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { add } from '../store/cartSlice';
 
 function Products() {
 
     const [products, setProducts] = useState([]);
+
+    const dispatch = useDispatch();
+
+    let handleAdd = (product)=>{
+        dispatch(add(product));
+    }
 
     useEffect(()=>{
         const getProducts = async ()=>{
@@ -25,7 +33,7 @@ function Products() {
                         <h6>{product.title}</h6>
                         <h5>{product.price}</h5>
 
-                        <button className='btn'>Add to cart</button>
+                        <button onClick={()=>handleAdd(product)} className='btn'>Add to cart</button>
                     </div>
                 })
             }
