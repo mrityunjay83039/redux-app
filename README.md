@@ -1,4 +1,4 @@
 # REDUX APP
-## Creating react application using Reduct for the state management
+## Creating React application using Redux for the state management
 
-
+Note : Ecommerce Products with [https://fakestoreapi.com/] API 
